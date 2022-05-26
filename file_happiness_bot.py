@@ -2,13 +2,16 @@ import telebot
 from telebot import types
 import random
 from datetime import date
+import os
 
 
-def read_file(file_name):
-    with open(file_name, 'r') as file:
-        return file.read()
+# def read_file(file_name):
+#     with open(file_name, 'r') as file:
+#         return file.read()
+#
+# bot = telebot.TeleBot(read_file('token.txt'))
 
-bot = telebot.TeleBot(read_file('token.txt'))
+bot = telebot.TeleBot(os.getenv('token'))
 
 list_name_file = ['0101', '0201', '0301', '0401', '0501', '0601', '0701', '0801', '0901', '1001']
 
