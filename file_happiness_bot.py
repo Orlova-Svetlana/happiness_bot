@@ -11,9 +11,11 @@ import os
 #
 # bot = telebot.TeleBot(read_file('token.txt'))
 
-bot = telebot.TeleBot(os.getenv('token'))
+token = os.getenv('TELEBOT_TOKEN')
+bot = telebot.TeleBot(token)
 
 list_name_file = ['0101', '0201', '0301', '0401', '0501', '0601', '0701', '0801', '0901', '1001']
+print('Поехали!')
 
 @bot.message_handler(commands=['start'])
 def start(message):
